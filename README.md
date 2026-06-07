@@ -193,6 +193,9 @@ RR correcta
 - Integración con Allosaurus
 - Comparación automática de pronunciación
 
+Módulo Experimental IPA
+
+Se diseñó una capa de análisis fonético basada en el Alfabeto Fonético Internacional (IPA). La arquitectura ya contempla un módulo independiente encargado de recibir el audio procesado y convertirlo en secuencias fonéticas. Debido a limitaciones de compatibilidad entre algunas bibliotecas de reconocimiento fonético y la versión utilizada de Python, la integración completa quedó definida como trabajo futuro. Sin embargo, la estructura necesaria para su incorporación ya forma parte del proyecto.
 ---
 
 # Roadmap
@@ -208,6 +211,8 @@ RR correcta
 - Conversión Audio → IPA
 - Integración Allosaurus
 - Evaluación fonética avanzada
+
+
 
 ## Versión 3.0
 

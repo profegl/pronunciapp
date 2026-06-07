@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 import ffmpeg
+from analisis.ipa_detector import analyze_ipa
 
 from analisis.rr_detector import analyze_rr
 
@@ -47,6 +48,7 @@ async def upload_audio(file: UploadFile = File(...)):
 
     # Analizar WAV
     result = analyze_rr(wav_path)
+    result_ipa = analyze_ipa(wav_path)
 
     # Limpiar archivos temporales
     if os.path.exists(file_path):
@@ -57,5 +59,6 @@ async def upload_audio(file: UploadFile = File(...)):
 
     return {
         "filename": file.filename,
-        "analysis": result
+        "analysis": result,
+        "ipa_module": result_ipa
     }
